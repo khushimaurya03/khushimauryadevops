@@ -1,5 +1,5 @@
 public class editproductvfcontroller {
-   //hi khushi
+   
     public Productions__c product{get;set;}
 	public List<Productions__c> prod{get;set;}
 	public List<productwrapper> lstWrap{get;set;}
