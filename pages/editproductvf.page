@@ -1,0 +1,31 @@
+<apex:page Controller="editproductvfcontroller" >
+    
+    <apex:form >
+<apex:pageBlock >
+<apex:pageBlockSection title="Product Details" columns="1">
+    <apex:pageMessages ></apex:pageMessages>
+<apex:pageBlockTable value="{!lstWrap}" var="wrap">
+<apex:column >
+<apex:inputCheckbox value="{!wrap.isSelected}"/>
+</apex:column>
+<apex:column value="{!wrap.productwrap.name}"/>
+
+<apex:column value="{!wrap.productwrap.Product_Approval_Status__c}"/>
+<apex:column value="{!wrap.productwrap.Cost__c}"/>
+<apex:column value="{!wrap.productwrap.List_of_brands__c}"/>
+<apex:column value="{!wrap.productwrap.List_of_Category__c}"/>
+<apex:column >
+    <apex:commandlink value="edit" action="{!doedit}">
+        <apex:param name="recordId" value="{!wrap.productwrap.id}" assignTo="{!recordId}" />
+    </apex:commandlink>
+
+</apex:column>
+</apex:pageBlockTable>
+    </apex:pageBlockSection>
+    <apex:pageBlockButtons >
+        <apex:commandButton value="Delete" action="{!dodelete}" />
+   
+    </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,29 @@
+<apex:page controller="ordervfcontroller" >
+   
+    <apex:form >
+    <apex:pageBlock title="Add Order Details">
+         <apex:pageMessages ></apex:pageMessages>
+        <apex:pageBlockSection columns="1">
+            <apex:inputField value="{!order.Customer_Name__c}"  />
+            <apex:inputField value="{!order.Email__c}"  />
+           <apex:inputField value="{!order.Phone__c}"  />
+            <apex:inputField value="{!order.Address__c}"  />
+            <apex:inputField value="{!order.Product__c}"  />
+             <apex:inputField value="{!order.Quantity__c}" />
+             <apex:inputField value="{!order.GST_Number__c}"  />
+             <apex:inputField value="{!order.Order_Date__c}"  />
+             <apex:inputField value="{!order.Status__c}" />
+           
+        </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!saveorder}" />
+                <apex:commandButton value="Cancel" action="{!cancelorder}" />
+               
+
+          </apex:pageBlockButtons>
+
+
+
+    </apex:pageBlock>
+        </apex:form>
+</apex:page>

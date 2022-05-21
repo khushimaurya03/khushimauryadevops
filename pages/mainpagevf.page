@@ -1,0 +1,51 @@
+<apex:page controller="mainpagevfcontroller">
+   
+    <apex:form >
+    <apex:pageBlock title="E-Commerce Management System" >
+       <apex:pageMessages ></apex:pageMessages>
+   
+    <apex:pageBlocksection title="Your Product Details" >
+        <apex:pageBlockTable title="Product Details" value="{!product}" var="p" >
+            <apex:column value="{!p.Name}" />
+            <apex:column value="{!p.List_of_Category__c}" />
+            <apex:column value="{!p.List_of_brands__c}" />
+            
+            <apex:column value="{!p.Units_Available__c}" />
+            <apex:column value="{!p.Cost__c}" />
+        </apex:pageBlockTable>
+       </apex:pageBlocksection>
+       <apex:pageBlockSection title="Update your Product" columns="1" >
+        <apex:commandLink value="Add product" action="{!addproductlink}" />
+        <apex:commandLink value="Edit / Delete product" action="{!EditOrDeleteproductLink}" />
+
+
+</apex:pageBlockSection>
+       
+    <apex:pageBlocksection title="Your Order Details" >
+        <apex:pageBlockTable title="Order Details" value="{!order}" var="o" >
+            
+            
+            <apex:column value="{!o.Customer_Name__c}"  />
+            <apex:column value="{!o.Email__c}"  />
+           <apex:column value="{!o.Phone__c}"  />
+            <apex:column value="{!o.Address__c}"  />
+            <apex:column value="{!o.Product__c}"  />
+             <apex:column value="{!o.Quantity__c}" />
+             <apex:column value="{!o.GST_Number__c}"  />
+             <apex:column value="{!o.Order_Date__c}"  />
+             <apex:column value="{!o.Status__c}" />
+           
+            </apex:pageBlockTable>
+    </apex:pageBlocksection>
+       
+    
+    <apex:pageBlockSection title="Update your Order" columns="1" >
+<apex:commandLink value="Add Order" action="{!addorderlink}" />
+        <apex:commandLink value="Edit / Delete Order" action="{!EditOrDeleteOrderLink}" />
+   </apex:pageBlockSection>
+       
+   
+       
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

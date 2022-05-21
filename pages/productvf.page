@@ -1,0 +1,27 @@
+<apex:page controller="productvfcontroller" >
+    <apex:form >
+    <apex:pageBlock title="Add Product">
+        <apex:pageMessages ></apex:pageMessages>
+        
+        <apex:pageBlockSection columns="1">
+            <apex:inputField value="{!product.Name}"  />
+            <apex:inputField value="{!Product.List_of_Category__c}" />
+            <apex:inputField value="{!Product.List_of_brands__c}" />
+            
+            <apex:inputField value="{!Product.Cost__c}"  />
+            <apex:inputField value="{!Product.Units_Available__c}"  />
+           
+        </apex:pageBlockSection>
+            
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!SaveProduct}" />
+                <apex:commandButton value="Cancel" action="{!CancelProduct}" />
+                
+              </apex:pageBlockButtons>
+       
+
+
+    </apex:pageBlock>
+        </apex:form>
+
+</apex:page>
